@@ -2,7 +2,7 @@
 
 A themed popup of your newest downloads for the [Omarchy](https://omarchy.org) shell. Press a key, drag a file straight into Slack, a browser, Claude, or any other app, and the popup gets out of the way. It's the Downloads stack from the macOS dock, without a dock.
 
-<p align="center"><img src="assets/screenshot.png" alt="The Downloads popup in the Osaka Jade theme, listing nine recent files with type icons, sizes, and ages" width="440"></p>
+<p align="center"><img src="preview.png" alt="The Downloads popup in the Osaka Jade theme, listing nine recent files with type icons, sizes, and ages" width="440"></p>
 
 - The 15 newest files in your Downloads folder, newest first
 - A Nerd Font icon per file type, colored from your theme's palette, and real thumbnails for images
@@ -10,6 +10,19 @@ A themed popup of your newest downloads for the [Omarchy](https://omarchy.org) s
 - A real Wayland drag (`text/uri-list`), so any app that accepts dropped files takes the drop. The popup fades while you drag and closes once the file lands
 - Follows your Omarchy theme, font, corner radius, and menu styling, and switches live when the theme does
 - Skips hidden files and unfinished browser downloads (`.part`, `.crdownload`)
+
+## Requirements
+
+Everything it needs ships with Omarchy, so there is nothing extra to install:
+
+- Omarchy with the Quickshell-based Omarchy shell
+- `xdg-user-dir`, to find your Downloads folder (falls back to `~/Downloads`)
+- `xdg-open`, to open files and the folder
+- `wl-copy` (wl-clipboard), for `Ctrl+C`
+- `notify-send`, for the "Copied" notification
+- A Nerd Font, for the file-type icons (Omarchy's default fonts are Nerd Fonts)
+
+The plugin only reads your Downloads folder. It never moves, renames, or deletes files, and it changes no configuration.
 
 ## Install
 
