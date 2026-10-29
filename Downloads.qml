@@ -66,7 +66,8 @@ Item {
     var files = Files.parse(lines.join("\n"), root.limit)
     fileModel.clear()
     for (var i = 0; i < files.length; i++) fileModel.append(files[i])
-    if (root.selectedIndex >= fileModel.count) root.selectedIndex = 0
+    root.selectedIndex = 0
+    fileList.positionViewAtBeginning()
   }
 
   function kindColor(colorKey) {

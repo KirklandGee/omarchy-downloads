@@ -2,6 +2,8 @@
 
 A themed popup of your newest downloads for the [Omarchy](https://omarchy.org) shell. Press a key, drag a file straight into Slack, a browser, Claude, or any other app, and the popup gets out of the way. It's the Downloads stack from the macOS dock, without a dock.
 
+<p align="center"><img src="assets/screenshot.png" alt="The Downloads popup in the Osaka Jade theme, listing nine recent files with type icons, sizes, and ages" width="440"></p>
+
 - The 15 newest files in your Downloads folder, newest first
 - A Nerd Font icon per file type, colored from your theme's palette, and real thumbnails for images
 - Size and age for every file ("2.3 MB · 5m ago")
