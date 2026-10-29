@@ -89,8 +89,24 @@ Item {
     if (index < 0 || index >= fileModel.count) return
     var file = fileModel.get(index)
     root.dismiss()
-    Quickshell.execDetached(["wl-copy", "--type", "text/uri-list", Files.fileUri(file.path)])
-    Quickshell.execDetached(["notify-send", "Copied to clipboard", file.name])
+    copier.uri = Files.fileUri(file.path)
+    copier.running = true
+    Quickshell.execDetached(["notify-send", "Downloads", "Copied to clipboard"])
+  }
+
+  // The URI goes to wl-copy over stdin, never argv, so other local users
+  // can't read the filename from the process list. Closing stdin ends input.
+  Process {
+    id: copier
+    property string uri: ""
+    command: ["wl-copy", "--type", "text/uri-list"]
+    stdinEnabled: true
+    onStarted: {
+      write(uri + "\n")
+      uri = ""
+      stdinEnabled = false
+    }
+    onExited: stdinEnabled = true
   }
 
   ListModel { id: fileModel }
