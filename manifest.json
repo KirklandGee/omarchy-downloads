@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "kirklandgee.downloads",
+  "name": "Downloads",
+  "version": "0.1.0",
+  "author": "Kirkland Gee",
+  "license": "MIT",
+  "description": "A themed popup of your newest downloads. Drag a file straight into Slack, a browser, or any other app, like the Downloads stack in the macOS dock.",
+  "kinds": [
+    "overlay"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "overlay": "Downloads.qml"
+  }
+}
